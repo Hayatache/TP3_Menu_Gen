@@ -70,13 +70,15 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "Mc32NVMUtil.h"
 #include "DefMenuGen.h"
 #include "Mc32SpiUtil.h"
+#include "DefMenuGen.h"
+
+S_ParamGen LocalParamGen;
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: System Interrupt Vector Functions
 // *****************************************************************************
 // *****************************************************************************
-
  
 
 void __ISR(_TIMER_1_VECTOR, ipl4AUTO) IntHandlerDrvTmrInstance0(void)
@@ -84,23 +86,26 @@ void __ISR(_TIMER_1_VECTOR, ipl4AUTO) IntHandlerDrvTmrInstance0(void)
     static int16_t cpt_3s = 0;
     static int16_t cpt_10cycle = 0;
     PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_1);
-    ScanPec12(BSP_SwitchStateGet(PEC12_A_BIT),BSP_SwitchStateGet(PEC12_B_BIT),BSP_SwitchStateGet(PEC12_PB_BIT));
-    BSP_LEDToggle(BSP_LED_1);
-    if(cpt_3s >= 2999){
-        if(cpt_10cycle >= 9){
+    //ScanPec12(BSP_SwitchStateGet(PEC12_A_BIT),BSP_SwitchStateGet(PEC12_B_BIT),BSP_SwitchStateGet(PEC12_PB_BIT));
+
+    if(cpt_3s >= 2999)
+    {
+        if(cpt_10cycle >= 9)
+        {
             APP_UpdateState(APP_STATE_SERVICE_TASKS);
         }
-        else{
+        else
+        {
             cpt_10cycle ++;
         }
     }
     else {
         cpt_3s ++;
     }
+     
 }
 void __ISR(_TIMER_3_VECTOR, ipl7AUTO) IntHandlerDrvTmrInstance1(void)
 {
-    BSP_LEDToggle(BSP_LED_2);
     PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_3);
     GENSIG_Execute();
 }

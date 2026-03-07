@@ -12,6 +12,7 @@
 
 #include "DefMenuGen.h"
 
+
 // Initialisation du  générateur
 void  GENSIG_Initialize(S_ParamGen *pParam);
 
@@ -25,6 +26,9 @@ void  GENSIG_UpdateSignal(S_ParamGen *pParam);
 
 // A appeler dans int Timer3
 void  GENSIG_Execute(void);
+
+// Fonction pour éviter la saturation
+void AntiStaturation(int32_t *val);
 
 
 #endif

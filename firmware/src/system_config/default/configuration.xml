@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Configuration>
+  <DisplayManager>
+    <SystemInitScript dnOrder="0"/>
+    <SystemStartScript dnOrder="1"/>
+  </DisplayManager>
   <General>
-    <HarmonyPath dnOrder="0" path="../../.."/>
+    <HarmonyPath dnOrder="0" path="../../../../../.."/>
     <Processor dnOrder="1" name="PIC32MX795F512L"/>
     <Board dnOrder="2" name=" "/>
     <ForceOptimization dnOrder="3" flag="true"/>
@@ -167,7 +171,7 @@
       <Template dnOrder="1">
         <Name dnOrder="0">system_init.c</Name>
         <Path dnOrder="1">Source&amp;#160;Files/app/system_config/default</Path>
-        <Checksum dnOrder="2">12DFCCF96ADA2A3AEBA72DEF7D48E1F6</Checksum>
+        <Checksum dnOrder="2">3B68763916F998010407B5B1AB4A5196</Checksum>
       </Template>
       <Template dnOrder="2">
         <Name dnOrder="0">main.c</Name>
@@ -225,7 +229,7 @@
       <Template dnOrder="13">
         <Name dnOrder="0">system_config.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/app/system_config/default</Path>
-        <Checksum dnOrder="2">4C4EE0B07EE45576FDFAF0432032E704</Checksum>
+        <Checksum dnOrder="2">08E06FC47735595F9E4E3DFCDDB293F4</Checksum>
       </Template>
       <Template dnOrder="14">
         <Name dnOrder="0">app.h</Name>
@@ -234,12 +238,13 @@
       <Template dnOrder="15">
         <Name dnOrder="0">drv_tmr_static.c</Name>
         <Path dnOrder="1">Source&amp;#160;Files/app/system_config/default/framework/driver/tmr/src</Path>
-        <Checksum dnOrder="2">1BACA31A650DA35486D3FD577E2B0A4D</Checksum>
+        <Checksum dnOrder="2">FFEC4523B5F8AA5FA7715D4C38E37F1E</Checksum>
       </Template>
       <Template dnOrder="16">
         <Name dnOrder="0">system_interrupt.c</Name>
         <Path dnOrder="1">Source&amp;#160;Files/app/system_config/default</Path>
-        <Checksum dnOrder="2">8472AD215D5FA17337F68F888DC5418E</Checksum>
+        <Checksum dnOrder="2">303534EC1CC7CD6FDEEDDCF1446B3D3C</Checksum>
+        <ProjectFileChecksum dnOrder="3">0E4B75B3FF75107AB103A658DF4BFE1F</ProjectFileChecksum>
       </Template>
       <Template dnOrder="17">
         <Name dnOrder="0">sys_clk_pic32mx.c</Name>
@@ -249,16 +254,16 @@
     </Templates>
     <CompilerItems dnOrder="2">
       <C32 dnOrder="0">
-        <Include dnOrder="0" value="C:\microchip\harmony\v2_06\apps\MINF\TP3_Menu_Gen\firmware\src"/>
-        <Include dnOrder="1" value="C:\microchip\harmony\v2_06\apps\MINF\TP3_Menu_Gen\firmware\src\system_config\default"/>
-        <Include dnOrder="2" value="C:\microchip\harmony\v2_06\apps\MINF\TP3_Menu_Gen\firmware\src\default"/>
+        <Include dnOrder="0" value="C:\microchip\harmony\v2_06\apps\MINF\TP\TP3_MenuGen\TP3\TP3_Menu_Gen\firmware\src"/>
+        <Include dnOrder="1" value="C:\microchip\harmony\v2_06\apps\MINF\TP\TP3_MenuGen\TP3\TP3_Menu_Gen\firmware\src\system_config\default"/>
+        <Include dnOrder="2" value="C:\microchip\harmony\v2_06\apps\MINF\TP\TP3_MenuGen\TP3\TP3_Menu_Gen\firmware\src\default"/>
         <Include dnOrder="3" value="C:\microchip\harmony\v2_06\framework"/>
-        <Include dnOrder="4" value="C:\microchip\harmony\v2_06\apps\MINF\TP3_Menu_Gen\firmware\src\system_config\default\framework"/>
-        <Include dnOrder="5" value="../../../../../bsp/pic32mx_skes"/>
+        <Include dnOrder="4" value="C:\microchip\harmony\v2_06\apps\MINF\TP\TP3_MenuGen\TP3\TP3_Menu_Gen\firmware\src\system_config\default\framework"/>
+        <Include dnOrder="5" value="../../../../../../../../bsp/pic32mx_skes"/>
       </C32>
     </CompilerItems>
     <Libraries dnOrder="3">
-      <Library dnOrder="0" value="../../../../../bin/framework/peripheral/PIC32MX795F512L_peripherals.a"/>
+      <Library dnOrder="0" value="../../../../../../../../bin/framework/peripheral/PIC32MX795F512L_peripherals.a"/>
     </Libraries>
   </Manifest>
 </Configuration>

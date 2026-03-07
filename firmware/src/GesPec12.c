@@ -67,24 +67,58 @@ S_Pec12_Descriptor Pec12;
 //     __________                       __________________
 // A:            |_____________________|        
 
-void ScanPec12 (bool ValA, bool ValB, bool ValPB)
+void ScanPec12 (bool ValA, bool ValB, bool ValBTN)
 {
+   /*
+   static uint32_t tempsAppuisBTN = 0;
+   static bool ValA_OLD, ValB_OLD, ValBTN_OLD = 0;
+   
    // Traitement antirebond sur A, B et PB
    DoDebounce (&DescrA, ValA);
    DoDebounce (&DescrB, ValB);
-   DoDebounce (&DescrPB, ValPB);
+   DoDebounce (&DescrPB, ValBTN);
+   
+   
+   // flanc montant 
+   if(DebounceIsReleased() = 1)
    
    // Détection incrément / décrément
-  
-   
+   if(ValA == true && ValB > ValB_OLD)
+   {
+       //DoDebounce(,);
+   }
+   else if(ValB == true && ValA > ValA_OLD)
+   {
+       Pec12IsMinus();
+   }
+   else if(ValBTN == true && ValBTN_OLD == 1) // Traitement du PushButton
+   {
+       if(tempsAppuisBTN > VALATTENTE500MS)
+       {
+          Pec12IsESC();
+       }
+       else
+       {
+           Pec12IsOK();
+       }
+   }
     
-   // Traitement du PushButton
-   
-   
+      
    // Gestion inactivité
+   if(ValBTN = 1)
+   {
+       tempsAppuisBTN++;
+       ValA_OLD = ValA;
+       ValB_OLD = ValB;
+       ValBTN_OLD = ValBTN;
+   }
+   else
+   {
+       tempsAppuisBTN = 0;
+       Pec12NoActivity();
+   }
 
-
-   
+   */
  } // ScanPec12
 
 

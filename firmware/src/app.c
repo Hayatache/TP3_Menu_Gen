@@ -154,21 +154,27 @@ void APP_Tasks ( void )
 
             // Initialisation PEC12
             Pec12Init();
+            
+            GENSIG_Initialize(&LocalParamGen);
 
             // Initialisation du menu
             MENU_Initialize(&LocalParamGen);
 
             // Initialisation du generateur
             GENSIG_Initialize(&LocalParamGen);
-            
-            printf_lcd("Canevas Tp3       ");
+            lcd_gotoxy(1,1);
+            printf_lcd("Tp3       ");
             // A adapter pour les 2 noms sur 2 lignes
             lcd_gotoxy(1,2);
-            printf_lcd("C. Huber 03.02.2016");
-
+            printf_lcd("T. Mlynek 25.02.2026");
+            
             // Active les timers 
             DRV_TMR0_Start();
             DRV_TMR1_Start();
+            
+            GENSIG_UpdatePeriode(&LocalParamGen);
+            GENSIG_UpdateSignal(&LocalParamGen);
+            
             appData.state = APP_STATE_WAIT;
             break;
         }
@@ -181,6 +187,7 @@ void APP_Tasks ( void )
 
             // Execution du menu
             MENU_Execute(&LocalParamGen);
+            
             appData.state = APP_STATE_WAIT;
          break;
         /* TODO: implement your application state machine.*/

@@ -68,8 +68,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 /*** DEVCFG1 ***/
 
 #pragma config FNOSC =      PRIPLL
-#pragma config FSOSCEN =    OFF
-#pragma config IESO =       OFF
+#pragma config FSOSCEN =    ON
+#pragma config IESO =       ON
 #pragma config POSCMOD =    XT
 #pragma config OSCIOFNC =   OFF
 #pragma config FPBDIV =     DIV_1

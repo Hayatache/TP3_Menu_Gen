@@ -44,6 +44,8 @@ typedef struct {
             uint16_t InactivityDuration;   // Pour durée inactivité
 } S_Pec12_Descriptor;
 
+#define VALATTENTE500MS 500
+
 
 
 
